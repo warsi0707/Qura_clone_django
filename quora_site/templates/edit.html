@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<h2>Edit your post</h2>
+    <!-- <p>Post id :{{post.id}}</p> -->
+    <!-- <p>Post username : {{post.user_name}}</p> -->
+    <form method="POST" action="{% url 'uprec' post.id %}">
+        {% csrf_token %}
+        <input  value="{{post.user_name}}" name="user_name"> <br> <br>
+        <input  value="{{post.content}}" name="content"> <br> <br>
+        <button>Submit</button>
+    </form>
+  
+{% endblock body %}

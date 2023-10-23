@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body %}
+<h1>Create New post</h1>
+<a href="">Back To Home</a> <br> <br>
+    <form method="post" action="{% url 'addrec' %}">
+        {% csrf_token %}
+        <input type="text" name="user_name" placeholder="Heading"><br> <br>
+        <textarea name="content" placeholder="write your posts"></textarea> <br>
+        <button>Submit Post</button>
+    </form>
+  
+{% endblock body %}
